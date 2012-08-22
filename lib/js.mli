@@ -551,5 +551,16 @@ module Unsafe : sig
   external eval_string : string -> 'a = "caml_js_eval_string"
     (** Evaluate Javascript code *)
 
+  val call0 : string -> 'a
+  val call1 : string -> 'a -> 'b
+  val call2 : string -> 'a -> 'b -> 'c
+  val call3 : string -> 'a -> 'b -> 'c -> 'd
+  val call4 : string -> 'a -> 'b -> 'c -> 'd -> 'e
+  val call5 : string -> 'a -> 'b -> 'c -> 'd -> 'e -> 'f
+  val call6 : string -> 'a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g
+  val call7 : string -> 'a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g -> 'h
+  val call8 : string -> 'a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g -> 'h -> 'i
+  val call9 : string -> 'a -> 'b -> 'c -> 'd -> 'e -> 'f -> 'g -> 'h -> 'i -> 'j
+
 (*FIX also, object/array literals *)
 end
