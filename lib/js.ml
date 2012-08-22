@@ -43,6 +43,30 @@ module Unsafe = struct
   external pure_expr : (unit -> 'a) -> 'a = "caml_js_pure_expr"
 
   external eval_string : string -> 'a = "caml_js_eval_string"
+
+
+  let call0 f = fun_call (variable f)
+    ([| |])
+  let call1 f x1 = fun_call (variable f)
+    ([| inject x1 |])
+  let call2 f x1 x2 = fun_call (variable f)
+    ([| inject x1;inject x2 |])
+  let call3 f x1 x2 x3 = fun_call (variable f)
+    ([| inject x1;inject x2;inject x3 |])
+  let call4 f x1 x2 x3 x4 = fun_call (variable f)
+    ([| inject x1;inject x2;inject x3;inject x4 |])
+  let call5 f x1 x2 x3 x4 x5 = fun_call (variable f)
+    ([| inject x1;inject x2;inject x3;inject x4;inject x5 |])
+  let call6 f x1 x2 x3 x4 x5 x6 = fun_call (variable f)
+    ([| inject x1;inject x2;inject x3;inject x4;inject x5;inject x6 |])
+  let call7 f x1 x2 x3 x4 x5 x6 x7 = fun_call (variable f)
+    ([| inject x1;inject x2;inject x3;inject x4;inject x5;inject x6;inject x7 |])
+  let call8 f x1 x2 x3 x4 x5 x6 x7 x8 = fun_call (variable f)
+    ([| inject x1;inject x2;inject x3;inject x4;inject x5;inject x6;inject x7;inject x8 |])
+  let call9 f x1 x2 x3 x4 x5 x6 x7 x8 x9 = fun_call (variable f)
+    ([| inject x1;inject x2;inject x3;inject x4;inject x5;inject x6;inject x7;inject x8;inject x9 |])
+
+
 end
 
 (****)
